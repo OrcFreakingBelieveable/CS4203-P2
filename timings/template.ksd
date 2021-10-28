@@ -1,0 +1,5 @@
+# the template for Keystroke Dynamic records 
+File name: 
+<Volunteer id: int>_<Test Code: string> # e.g. V1_1.a.1
+File content: 
+<Volunteer id: int> "<Test Code: string>" "<ID: String>" <ID Timings: CS Array> "<Password: String>" <Password Timings: CS Array>
