@@ -7,6 +7,7 @@ repetitions=$4
 for ((j = 0; j < $repetitions; j++)); do
 
     clear
+
     id=""                # string of at most 10 characters
     declare -a id_millis # the <=9 millisecond differences between the <=10 letters
     pw=""                # string of at most 20 characters
@@ -33,6 +34,7 @@ for ((j = 0; j < $repetitions; j++)); do
         fi
     done
 
+    # add ID and keystroke dynamics to CSV
     echo -n ",$id" >>$output_file
     for ((i = 0; i < $id_index - 1; i++)); do
         delay=$((${id_millis[i + 1]} - ${id_millis[i]}))
@@ -60,6 +62,7 @@ for ((j = 0; j < $repetitions; j++)); do
         fi
     done
 
+    # add PW and keystroke dynamics to CSV
     echo -n ",$pw" >>$output_file
     for ((i = 0; i < $pw_index - 1; i++)); do
         delay=$((${pw_millis[i + 1]} - ${pw_millis[i]}))
