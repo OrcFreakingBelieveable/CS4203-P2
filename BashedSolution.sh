@@ -8,7 +8,7 @@ volunteer=$2
 test_code=$3
 index=0
 
-cat >> $output_file "$volunteer,$test_code"
+echo "$volunteer,$test_code" >> $output_file
 
 echo "Enter a user name"
 # read a single character
@@ -27,10 +27,10 @@ while read -n1 key; do
     fi
 done
 
-cat >> $output_file ",$id"
+echo ",$id" >> $output_file 
 for ((i = 0; i < 9; i++)); do
     delay=$((${id_millis[i+1]} - ${id_millis[i]}))
-    cat >> $output_file ",$delay"
+    echo ",$delay" >> $output_file
 done
 index=0
 echo ""
@@ -52,10 +52,10 @@ while read -n1 key; do
     fi
 done
 
-cat >> $output_file ",$pw"
+echo ",$pw" >> $output_file
 for ((i = 0; i < 19; i++)); do
     delay=$((${pw_millis[i+1]} - ${pw_millis[i]}))
-    cat >> $output_file ",$delay"
+    echo ",$delay" >> $output_file
 done
 index=0
 echo ""
