@@ -3,9 +3,12 @@ declare id=""        # string of at most 10 characters
 declare -a id_millis # the <=9 millisecond differences between the <=10 letters
 declare pw           # string of at most 20 characters
 declare -a pw_millis # the <=19 millisecond differences between the <=20 letters
-volunteer=$1
-test_code=$2
+output_file=$1
+volunteer=$2
+test_code=$3
 index=0
+
+cat >> $output_file "$volunteer,$test_code"
 
 echo "Enter a user name"
 # read a single character
@@ -24,6 +27,11 @@ while read -n1 key; do
     fi
 done
 
+cat >> $output_file ",$id"
+for ((i = 0; i < 9; i++)); do
+    delay=$((${id_millis[i+1]} - ${id_millis[i]}))
+    cat >> $output_file ",$delay"
+done
 index=0
 echo ""
 
@@ -44,17 +52,12 @@ while read -n1 key; do
     fi
 done
 
+cat >> $output_file ",$pw"
+for ((i = 0; i < 19; i++)); do
+    delay=$((${pw_millis[i+1]} - ${pw_millis[i]}))
+    cat >> $output_file ",$delay"
+done
 index=0
 echo ""
-
-echo "${id}"
-echo "${pw}"
-
-for ((i = 0; i < 1; i++)); do
-    echo ""
-    #echo "${id:i:1}"
-    #delay=$((${id_millis[i+1]} - ${id_millis[i]}))
-    #echo " ${id:i:2}: ${delay}"
-done
 
 read
