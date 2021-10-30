@@ -1,8 +1,8 @@
 #!/bin/bash
-declare id="" # string of at most 10 characters 
-declare -a id_millis # the <=9 millisecond differences between the <=10 letters 
-declare pw # string of at most 20 characters 
-declare -a pw_millis # the <=19 millisecond differences between the <=20 letters 
+declare id=""        # string of at most 10 characters
+declare -a id_millis # the <=9 millisecond differences between the <=10 letters
+declare pw           # string of at most 20 characters
+declare -a pw_millis # the <=19 millisecond differences between the <=20 letters
 volunteer=$1
 test_code=$2
 index=0
@@ -18,8 +18,8 @@ while read -n1 key; do
     id=$id$key
     id_millis[$index]=$(date +%s%3N)
 
-    ((index+=1))
-    if [ $index -gt 9 ]; then 
+    ((index += 1))
+    if [ $index -gt 9 ]; then
         break
     fi
 done
@@ -38,8 +38,8 @@ while read -n1 key; do
     pw=$pw$key
     pw_millis[$index]=$(date +%s%3N)
 
-    ((index+=1))
-    if [ $index -gt 19 ]; then 
+    ((index += 1))
+    if [ $index -gt 19 ]; then
         break
     fi
 done
@@ -57,4 +57,4 @@ for ((i = 0; i < 1; i++)); do
     #echo " ${id:i:2}: ${delay}"
 done
 
-read  
+read
