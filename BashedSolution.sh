@@ -35,7 +35,7 @@ while read -n1 key; do
         break
     fi
 
-    pw=$id$key
+    pw=$pw$key
     pw_millis[$index]=$(date +%s%3N)
 
     ((index+=1))
@@ -44,10 +44,14 @@ while read -n1 key; do
     fi
 done
 
+index=0
+echo ""
+
 echo "${id}"
 echo "${pw}"
 
-for ((i = 0; i < 19; i++)); do
+for ((i = 0; i < 1; i++)); do
+    echo ""
     #echo "${id:i:1}"
     #delay=$((${id_millis[i+1]} - ${id_millis[i]}))
     #echo " ${id:i:2}: ${delay}"
