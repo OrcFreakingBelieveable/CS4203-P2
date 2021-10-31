@@ -21,10 +21,11 @@ for each impediment
             enter test_case.password
         
 Test Codes:
-0 - natural rhythm
-1 - unnatural rhythm baseline
-2 - unnatural rhythm attempt
-3 - fingers taped
-4 - one hand
-5 - standing 
-6 - cold hands  
+0 - natural rhythm baseline
+1 - natural rhythm attempt
+2 - unnatural rhythm baseline
+3 - unnatural rhythm attempt
+4 - fingers taped
+5 - one hand
+6 - standing 
+7 - cold hands  
