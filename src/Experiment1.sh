@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage $ ./Experiment.sh <test case>
+# usage $ ./Experiment1.sh <test case>
 output_file="Experiment1.csv"
 test_case=$1
 ids=("aaaaa" "edward" "jc311" "MrBig")
@@ -65,7 +65,7 @@ function readPW {
 }
 
 # get baseline from one volunteer
-test_code=1
+test_code=2
 volunteer=test_case
 for ((r = 0; r < 5; r++)); do
     clear
@@ -77,21 +77,21 @@ for ((r = 0; r < 5; r++)); do
     id_index=0           # the actual length of the ID
     pw_index=0           # the actual length of the PW
 
-    echo -n "$volunteer,$test_code,$test_case,1" >>$output_file
+    echo -n "$volunteer,1,$test_case,$test_code" >>$output_file
 
     echo "Volunteer $volunteer, please choose a rhythm to type to and stick with it"
 
-    echo "Type ${ids[test_case]} with, then press the Esc key"
+    echo "Type \"${ids[test_case]}\", then press the Esc key"
     readID
 
-    echo "Type ${passwords[test_case]}, then press the Esc key"
+    echo "Type \"${passwords[test_case]}\", then press the Esc key"
     readPW
 
     echo "" >>$output_file
 done
 
 # all volunteers attempt to mimic the baseline
-test_code=2
+test_code=3
 for ((v = 0; v < 4; v++)); do
     for ((r = 0; r < 5; r++)); do # 3 attempts to mimic the baseline
         clear
