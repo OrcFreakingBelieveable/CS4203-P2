@@ -86,7 +86,12 @@ for ((test_code = 0; test_code < 5; test_code++)); do       # 5 impediments
             echo "Type \"${passwords[test_case]}\" ${test_descriptions[test_code]}, then press the Esc key"
             readPW
             
-            echo "" >>$output_file
+            echo "" >>$output_file  # end of line
+            
+            # if ID or password were incorrect then allow another attempt - timings will be exluded from analysis
+            if [[ "$id" != "${ids[test_case]}" || "$pw" != "${passwords[test_case]}" ]]; then
+                ((r--))
+            fi
         done
     done
 done
