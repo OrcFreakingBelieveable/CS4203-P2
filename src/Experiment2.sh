@@ -60,7 +60,7 @@ function readPW {
         delay=$((${pw_millis[i + 1]} - ${pw_millis[i]}))
         echo -n ",$delay" >>$output_file
     done
-    for ((i = $pw_index; i < 20; i++)); do
+    for ((i = $pw_index; i < 19; i++)); do
         echo -n "," >>$output_file
     done
     
