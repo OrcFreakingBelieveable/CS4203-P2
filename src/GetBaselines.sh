@@ -84,6 +84,11 @@ for ((test_case = 0; test_case < 4; test_case++)); do  # 4 test cases
         echo "Type ${passwords[test_case]}, then press the Esc key"
         readPW
         
+        # if ID or password were incorrect then allow another attempt - timings will be exluded from analysis
+        if [ "$id" != "${ids[test_case]}"] || [ "$pw" != "${passwords[test_case]}" ] ; then 
+            ((r--))
+        fi
+
         echo "" >>$output_file
     done
 done
