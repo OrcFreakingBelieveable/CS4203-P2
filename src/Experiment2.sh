@@ -1,6 +1,6 @@
 #!/bin/bash
 # usage $ ./Experiment2.sh <volunteer>
-output_file="Experiment1.csv"
+output_file="Experiment2.csv"
 volunteer=$1
 test_codes=(1 4 5 6 7)
 test_descriptions=( "with no impediment" "with taped fingers" "with your non-dominant hand" "whilst standing" "with cold hands")
