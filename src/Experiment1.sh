@@ -108,7 +108,7 @@ for ((v = 0; v < 4; v++)); do
         id_index=0           # the actual length of the ID
         pw_index=0           # the actual length of the PW
         
-        echo -n "$v,$test_code,$test_case,1" >>$output_file
+        echo -n "$v,1,$test_case,$test_code" >>$output_file 
 	
 	echo "Volunteer $v"
 
