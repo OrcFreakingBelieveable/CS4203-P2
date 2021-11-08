@@ -66,7 +66,7 @@ function readPW {
 
 # get baseline from one volunteer
 test_code=2
-volunteer=test_case
+volunteer=$test_case
 for ((r = 0; r < 5; r++)); do # 5 repetitions to set the baseline
     clear
     
@@ -109,9 +109,9 @@ for ((v = 0; v < 4; v++)); do
         pw_index=0           # the actual length of the PW
         
         echo -n "$v,$test_code,$test_case,1" >>$output_file
-        
-        echo "Volunteer $v, please choose a rhythm to type to and stick with it"
-        
+	
+	echo "Volunteer $v"
+
         echo "Type ${ids[test_case]} with, then press the Esc key"
         readID
         
